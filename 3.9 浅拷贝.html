@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+         var obj = {
+             id: 1,
+             uname: 'andy',
+             msg: {
+                 age: 18
+             }
+         }
+         var o={};
+        /*  for(var k in obj){
+             o[k]=obj[k];
+         }
+         console.log(o); */
+        // ES6新增浅拷贝语法糖
+        Object.assign(o, obj);
+        o.msg.age=20;
+        console.log(o);
+        console.log(obj);
+    </script>
+</body>
+
+</html>

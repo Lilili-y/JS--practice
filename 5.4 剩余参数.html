@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const getSum = (...args) => {
+            let total = 0;
+            args.forEach((item) => { total += item })
+            return total;
+        }
+        console.log(getSum(1,2,3));
+
+        //解构赋值与剩余参数组合使用 数组
+        let arr=[1,2,3];
+        let [a,...b]=arr;
+        console.log(a);
+        console.log(b);
+
+        //解构赋值与剩余参数组合使用  对象
+        // let obj={a:1,b:2,c:3};
+        // let {a,...b}=obj;
+        // console.log(a);
+        // console.log(b);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 50px;
+            height: 30px;
+            background-color: coral;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <script>
+        var btns = document.querySelectorAll('button');
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                this.disabled = true;
+                this.style.color = '#fff';
+                this.style.backgroundColor = '#ccc';
+                setTimeout(function () {
+                    this.disabled = false;
+                    this.style.color = '#000';
+                    this.style.backgroundColor = 'coral';
+                }.bind(this), 1000)
+            }
+        }
+    </script>
+</body>
+
+</html>

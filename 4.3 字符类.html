@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var re = /^[abc]$/  //多选一，只能是三个中的其中一个开头切结尾
+        // console.log(re.test('a'));//true
+        // console.log('abc');//false
+        //组合
+        // var re = /^[a-zA-Z0-9_]$/;
+        // console.log(re.test('c'));//true
+        // console.log(re.test('D'));//true
+        // console.log(re.test('!'));//false
+        //取反,在中括号里面放^符号，表示取反的意思
+        var re = /^[^a-zA-Z0-9_]$/
+        console.log(re.test('x'));//false
+        console.log(re.test(3));//false
+        console.log(re.test('!'));//true
+        console.log(re.test('@'));//true
+    </script>
+</body>
+
+</html>

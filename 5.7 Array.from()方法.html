@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Array.from()方法将伪数组转换成真数组，有两个参数，第二个参数是一个函数，能够对数据进行加工并返回
+        let arrlike = {
+            0: 4,
+            1: 6,
+            length: 2
+        };
+        let arr = Array.from(arrlike, item => item * 2);
+        console.log(arr);
+    </script>
+</body>
+
+</html>

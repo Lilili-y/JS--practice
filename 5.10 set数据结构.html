@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let s1 = new Set(['a', 'b']);
+        console.log(s1.size);
+        //利用set数组去重
+        let arr = [1, 1, 2, 1, 3, 4, 3, 2, 5, 6, 4];
+        let s2 = new Set(arr);
+        let arr1=[...s2];
+        console.log(arr1);
+
+        //添加数据 add()，可以链式添加 
+        s1.add('c').add('e');
+        console.log(s1.size);
+
+        //删除数据 delete 返回值是布尔值，是否删除成功
+        const re1=s1.delete('a');
+        console.log(re1);
+        
+        //判断是否有某个数据 has()，返回值是布尔值
+        const re2=s1.has('b');
+        console.log(re2);
+
+        //清空数据  clear()
+        s1.clear();
+    </script>
+</body>
+
+</html>

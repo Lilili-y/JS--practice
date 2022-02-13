@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        Array.prototype.max = function () {
+            var mmax = this[1];
+            for (i = 1; i < this.length; i++) {
+                if (mmax < this[i]) {
+                    mmax = this[i];
+                }
+            }
+            return mmax;
+        }
+        var arr = [1, 65, 78, 23, 555,656567,23];
+        console.log(arr.max());
+    </script>
+</body>
+
+</html>

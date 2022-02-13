@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ^ 表示开始
+        // $ 表示结尾
+        // var re = /^abc/;//以abc开头
+        // console.log(re.test('abceqwe'));  //true
+        // console.log(re.test('asabc'));    //false
+        // var re = /abc$/;//以abc结尾
+        // console.log(re.test('abceqwe'));  //false
+        // console.log(re.test('asabc'));    //true
+        var re = /^abc$/;//以abc开头且结尾
+        console.log(re.test('asabc'));    //false
+        console.log(re.test('abc'));    //true
+        console.log(re.test('abcabc'));    //false
+
+    </script>
+</body>
+
+</html>

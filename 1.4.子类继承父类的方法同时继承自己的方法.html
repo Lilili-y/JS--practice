@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Father {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            sum() {
+                console.log(this.x + this.y);
+            }
+        }
+        class Son extends Father {
+            constructor(x, y) { //若子类没有constructor构造函数，就不需要使用super关键字调用，会自动调用父类的构造函数，并传递参数
+                super(x, y);//super关键字将参数传给父类的constructor构造函数，并继承父类的构造函数和普通函数
+                //super必须在子类的this之前调用
+                this.x = x;
+                this.y = y;
+            }
+            lessSum() {
+                console.log(this.x - this.y);
+            }
+        }
+        /* var father = new Father(3, 5);
+        father.sum(); */
+        var son = new Son(10, 5);
+        son.sum();
+        son.lessSum();
+    </script>
+</body>
+
+</html>

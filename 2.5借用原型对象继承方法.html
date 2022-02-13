@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Father() {
+
+        }
+        Father.prototype.work = function () {
+            console.log("拧螺丝");
+        }
+        function Son() {
+
+        }
+        Son.prototype = new Father();//新建一个Father的实例对象，将这个实例对象赋值给Son的原型对象，这个实例对象可以使用Father的原型对象方法
+        Son.prototype.constructor = Son;//让Son的原型对象指回Son
+        var son = new Son();
+        son.work();
+    </script>
+</body>
+
+</html>

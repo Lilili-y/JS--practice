@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.创建正则表达式 new方法
+        // var re = new RegExp(123);//这个方法可以传参数
+        //2.创建正则表达式 字面量方法
+        var re = /123/g;    //g 表示全局匹配
+        // 当正则表达式为全局匹配时，会受lastIndex属性的影响，每次匹配lastIndex会变化
+        // 3.使用正则表达式 test方法，返回的是布尔值
+        console.log(re.test(123234));  //true
+        console.log(re.test('12abc'));  //false
+        console.log(re.test('ab1234')); //true
+        //4.使用正则表达式 exec方法，返回的是结果，匹配不到就返回null
+        console.log(re.exec('123dsd123'));    //['123', index: 6, input: '1234adf', groups: undefined]
+        console.log(re.exec('asdf'));   //null
+        // 5.match 返回匹配结果，match是字符串的方法
+        console.log('123534fsdfs'.match(re));   //['123', index: 0, input: '123534fsdfs', groups: undefined]
+        console.log('ase'.match(re));   //null
+        // 6.replace替换符合正则表达式的子串替换
+        var x = 'dasdfgewqgdwdwe123dsf123fs123545'.replace(re, 321);//将123全部替换成321
+        console.log(x);
+
+    </script>
+</body>
+
+</html>

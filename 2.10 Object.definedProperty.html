@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            uname: 'andy',
+            price: 1000
+        }
+        Object.defineProperty(obj,num,{
+            value:88,
+            writable:true,   //是否可重写，默认值是false，false表示不可重写
+            enumerable:true,    //是否可枚举（遍历），默认值是false，false表示不可枚举
+            configurable:true   //是否可删除或者修改特性，默认值是false，false表示不可删除
+        })
+    </script>
+</body>
+
+</html>

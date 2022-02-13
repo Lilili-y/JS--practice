@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Father(uname, age) {
+            this.name = uname;
+            this.age = age
+        }
+        function Son(uname, age) {
+            Father.call(this, uname, age);//调用父构造函数并且改变父构造函数的this指向，使this指向子构造函数的对象实例
+        }
+        var son = new Son("bob", 18);
+        console.log(son);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //利用递归的方法深拷贝
+        var obj = {
+            id: 1,
+            uname: 'andy',
+            msg: {
+                age: 18
+            }
+        }
+        var o = {};
+        //封装函数
+        function deepCopy(newObj, oldObj) {
+            for (var k in oldObj) {
+                var item = oldObj[k];
+                //判断属性是否是数组
+                if (item instanceof Array) {
+                    newObj[k] = [];
+                    deepCopy(newObj[k], item);
+                    //判断属性是否是函数
+                } else if (item instanceof Function) {
+                    newObj[k] = item;
+                    //判断属性是否是对象
+                } else if (item instanceof Object) {
+                    newObj[k] = {};
+                    deepCopy(newObj[k], item);
+                } else {
+                    newObj[k] = item;
+                }
+            }
+        }
+        deepCopy(o, obj);
+        o.msg.age = 20;
+        console.log(o);
+        console.log(obj);
+
+
+        //深拷贝的另一种方法
+        //这个方法会忽略掉方法，即函数不会拷贝过来
+        var x = JSON.parse(JSON.stringify(obj));
+        // JSON.stringify  将对象转换成字符串
+        // JSON.parse  将字符串转换成对象
+        x.msg.age = 25;
+        console.log(x);
+    </script>
+</body>
+
+</html>

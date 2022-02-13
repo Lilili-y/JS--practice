@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [12, 32, 234];
+        let [a, b, c] = arr;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+        //对象解构赋值
+        let obj = {
+            name: 'andy',
+            age: 18,
+        }
+        let { name, age } = obj;
+        // console.log(name);
+        // console.log(age);
+        let{name:myName,age:myAge}=obj;
+        console.log(myName);
+        console.log(myAge);
+    </script>
+</body>
+
+</html>
